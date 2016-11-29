@@ -1,7 +1,7 @@
-# Push Notificatio: WebSocket - NodeJs
-Exemplo de aplicação simples para demonstrar o uso do Websocket utilizando NodeJS como back-end Javascript.
+# PARTE 1 - Push Notificatio: WebSocket - NodeJs
+Esta é a parte 1, onde temos apenas o projeto base para se implementar o exemplo de aplicação simples para demonstrar o uso do Websocket utilizando NodeJS como back-end Javascript.
 
-## Principais Tecnologias utilizadas
+## Principais Tecnologias a serem utilizadas durante o projeto
 * [Node JS] (https://nodejs.org/)
 * [Express JS](http://expressjs.com/)
 * [socket.io](http://socket.io/)
@@ -41,9 +41,3 @@ nodemon app.js
 
 ## Como usar a aplicação?
 * Com o servidor executando, basta ir na URL:PORT na qual o servidor esta escutando. Como padrão, segue: http://localhost:3000
-* A pagina inicial, *escuta* ambos os canais de comunicação registrados no websocket(Canal 1 e Canal 2)
-* Existe uma pagina adicional para cada canal, para que possa *escutar* de forma separada cada um deles
-* Agora basta enviar suas mensagens e veja o comportamento do recebimento delas de acordo com a página que se esteja.
-
-## Cadê os prints?
-![Notificação](https://github.com/rodolfocruzbsb/websocket-nodejs-pushnotification/blob/master/prints/app.png)

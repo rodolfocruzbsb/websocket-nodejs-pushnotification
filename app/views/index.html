@@ -2,8 +2,7 @@
 <html>
   <head>
     <title>Websocket + NodeJS</title>   
-
-    <!-- Latest compiled and minified CSS -->
+    
     <link rel="stylesheet" href="/scripts/bootstrap/css/bootstrap.min.css">  
 
   </head>
@@ -13,15 +12,7 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/" title="Home">
             <span class="glyphicon glyphicon-home">
-          </a>
-
-          <a class="navbar-brand" href="/canal1" title="canal 1">
-            Canal 1
-          </a>
-
-          <a class="navbar-brand" href="/canal2" title="canal 2">
-            Canal 2
-          </a>
+          </a>         
         </div>
       </div>
     </nav>
@@ -42,67 +33,34 @@
     
     </form>
       
-    
-      <!--<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>-->
-      <script src="/scripts/socket.io/socket.io.min.js"></script>
-      <script src="/scripts/jquery/jquery.min.js"></script>
-      <script src="/scripts/bootstrap/js/bootstrap.min.js"></script>
-      <script src="/scripts/bootstrap-notify/bootstrap-notify.min.js"></script>
+          
+	  <script src="/scripts/jquery/jquery.min.js"></script>
+	  <script src="/scripts/bootstrap/js/bootstrap.min.js"></script>
+	  <script src="/scripts/bootstrap-notify/bootstrap-notify.min.js"></script>
       
 
-      <script type="text/javascript">
-        var socket = io();
+      <script type="text/javascript">        
 
         function notificaCanalUm(){
-
-          var campoMensagem = $('#inputMensagem');
-
-          socket.emit('pushnotification websocket canal_1', campoMensagem.val());
-
-          campoMensagem.val('');
+        	notImplementedYet();
           
         } 
 
         function notificaCanalDois(){
-
-          var campoMensagem = $('#inputMensagem');
-
-          socket.emit('pushnotification websocket canal_2', campoMensagem.val());
-
-          campoMensagem.val('');
+          	notImplementedYet();
           
         }
 
-         function notificaTodosCanais(){
-
-           var campoMensagem = $('#inputMensagem');
-
-          socket.emit('pushnotification websocket todos_canais', campoMensagem.val());
-
-          campoMensagem.val('');
+        function notificaTodosCanais(){
+        	notImplementedYet();
           
         }
            
+        function notImplementedYet(){
 
-        socket.on('pushnotification websocket canal_1', function(msg){
-          $.notify(
-            {
-              title: "Canal 1:",
-	            message: msg
-            }
-          );         
-        });
-
-        socket.on('pushnotification websocket canal_2', function(msg){
-          $.notify(
-            {
-              title: "Canal 2:",
-	            message: msg
-            },{
-              type: "success"
-            } 
-          );          
-        });
+        	alert("Ops! Nenhuma ação está definida ainda...");
+        }
+        
 
        
       </script>
