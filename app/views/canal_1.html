@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title>Websocket + NodeJS</title>   
+    <title>CANAL 1 - Websocket + NodeJS</title>
     
     <link rel="stylesheet" href="/scripts/bootstrap/css/bootstrap.min.css">  
 
   </head>
   <body>
+
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -25,8 +26,8 @@
       </div>
     </nav>
 
-    <h1>Todos os Canais</h1>
-
+    <h1>Canal 1</h1>
+    
     <form>
        
     
@@ -57,7 +58,7 @@
             socket.emit('pushnotification websocket canal_1', campoMensagem.val());
 
             campoMensagem.val('');
-          
+
         } 
 
         function notificaCanalDois(){
@@ -67,7 +68,7 @@
             socket.emit('pushnotification websocket canal_2', campoMensagem.val());
 
             campoMensagem.val('');
-          
+
         }
 
          function notificaTodosCanais(){
@@ -77,30 +78,18 @@
             socket.emit('pushnotification websocket todos_canais', campoMensagem.val());
 
             campoMensagem.val('');
-          
+
         }
            
 
         socket.on('pushnotification websocket canal_1', function(msg){
-          $.notify(
-            {
-              title: "Canal 1:",
-	            message: msg
-            }
-          );         
-        });
-
-        socket.on('pushnotification websocket canal_2', function(msg){
-          $.notify(
-            {
-              title: "Canal 2:",
-	            message: msg
-            },{
-              type: "success"
-            } 
-          );          
-        });
-
+            $.notify(
+              {
+                title: "Canal 1:",
+                message: msg
+              }
+            );         
+        });          
        
       </script>
 
