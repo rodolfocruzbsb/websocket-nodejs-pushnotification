@@ -2,7 +2,7 @@
 Exemplo de aplicação simples para demonstrar o uso do Websocket utilizando NodeJS como back-end Javascript.
 
 ## Principais Tecnologias utilizadas
-* Node JS
+* [Node JS] (https://nodejs.org/)
 * [Express JS](http://expressjs.com/)
 * [socket.io](http://socket.io/)
 * [jquery] (https://jquery.com/)
