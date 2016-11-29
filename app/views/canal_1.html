@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CANAL 1 - Websocket + NodeJS</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/scripts/bootstrap/css/bootstrap.min.css">  
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/" title="Home">
+            <span class="glyphicon glyphicon-home">
+          </a>
+
+          <a class="navbar-brand" href="/canal1" title="canal 1">
+            Canal 1
+          </a>
+
+          <a class="navbar-brand" href="/canal2" title="canal 2">
+            Canal 2
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <h1>Canal 1</h1>
+    
+    <form>
+       
+    
+      <input id="inputMensagem" autocomplete="false" />
+
+      <a class="btn btn-primary" href="javascript: notificaCanalUm();" role="button">Canal Um</a>
+
+      <a class="btn btn-success" href="javascript: notificaCanalDois();" role="button">Canal Dois</a>
+
+      <a class="btn btn-warning" href="javascript: notificaTodosCanais();" role="button">Todos</a> 
+      
+    
+    </form>
+      
+    
+      <!--<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>-->
+      <script src="/scripts/socket.io/socket.io.min.js"></script>
+      <script src="/scripts/jquery/jquery.min.js"></script>
+      <script src="/scripts/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/scripts/bootstrap-notify/bootstrap-notify.min.js"></script>
+      
+
+      <script type="text/javascript">
+        var socket = io();
+
+        function notificaCanalUm(){
+
+          var campoMensagem = $('#inputMensagem');
+
+          socket.emit('pushnotification websocket canal_1', campoMensagem.val());
+
+          campoMensagem.val('');
+
+        } 
+
+        function notificaCanalDois(){
+
+          var campoMensagem = $('#inputMensagem');
+
+          socket.emit('pushnotification websocket canal_2', campoMensagem.val());
+
+          campoMensagem.val('');
+
+        }
+
+         function notificaTodosCanais(){
+
+           var campoMensagem = $('#inputMensagem');
+
+          socket.emit('pushnotification websocket todos_canais', campoMensagem.val());
+
+          campoMensagem.val('');
+
+        }
+           
+
+        socket.on('pushnotification websocket canal_1', function(msg){
+          $.notify(
+            {
+              title: "Canal 1:",
+	            message: msg
+            }
+          );         
+        });          
+       
+      </script>
+
+  </body>
+</html>
